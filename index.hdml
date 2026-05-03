@@ -1,0 +1,30 @@
+function send() {
+  let input = document.getElementById("userInput").value;
+  let chat = document.getElementById("chat");
+
+  chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+  let lower = input.toLowerCase();
+  let reply;
+
+  if (lower.includes("chatgpt") || lower.includes("clone")) {
+    reply = "Nah bro I'm SusGPT 😈 just built different";
+  } 
+  else if (lower.includes("who are you")) {
+    reply = "I'm SusGPT... not your average AI 😤";
+  }
+  else if (lower.includes("hi") || lower.includes("hello")) {
+    reply = "Bro said hi 💀";
+  }
+  else {
+    let replies = [
+      "That made no sense but ok 👍",
+      "Skill issue detected",
+      "W or L chat?",
+      "I refuse 😤"
+    ];
+    reply = replies[Math.floor(Math.random() * replies.length)];
+  }
+
+  chat.innerHTML += "<p><b>SusGPT:</b> " + reply + "</p>";
+}
